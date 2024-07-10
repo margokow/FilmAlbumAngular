@@ -1,0 +1,34 @@
+@if (product.real) {
+  <div class="card" style="width: 18rem;">
+  @if (product.img) {
+    <img [src]="product.img" class="card-img-top" alt="...">
+  } @else {
+    <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg" class="card-img-top" alt="...">
+    }
+    <div class="card-body">
+      <h3 class="card-title">{{product.nom}}</h3>
+      <h5 class="card-title">{{product.real}}</h5>
+      <p class="card-text">{{product.synopsis | slice: 0:140}}</p>
+      <p class="card-text">{{product.annee}}</p>
+      <p class="card-text">{{product.detail}}</p>
+      <a routerLink="/products/films/{{product.id}}" class="btn btn-primary">Voir détails</a>
+    </div>
+  </div>
+
+} @else if (product.artiste) {
+  <div class="card" style="width: 18rem;">
+    @if (product.img) {
+      <img [src]="product.img" class="card-img-top" alt="...">
+    } @else {
+      <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg" class="card-img-top" alt="...">
+
+      }
+    <div class="card-body">
+      <h3 class="card-title">{{product.nom}}</h3>
+      <h5 class="card-title">{{product.artiste}}</h5>
+      <p class="card-text">{{product.annee}}</p>
+      <p class="card-text">{{product.detail}}</p>
+      <a routerLink="/products/albums/{{product.id}}" class="btn btn-primary">Voir détails</a>
+    </div>
+  </div>
+  }
